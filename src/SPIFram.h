@@ -33,7 +33,7 @@ class SPIFram {
 public:
   //------------------------------------ Constructor ------------------------------------//
   //New Constructor to Accept the PinNames as a Chip select Parameter - @boseji <salearj@hotmail.com> 02.03.17
-  #if defined (ARDUINO_ARCH_SAMD) || defined(ARCH_STM32)
+  #if defined (ARDUINO_ARCH_SAMD) || defined(ARCH_STM32) || defined(ARDUINO_ARCH_SAMDLC)
   SPIFram(uint8_t cs = CS, SPIClass *spiinterface=&SPI);
   #elif defined (BOARD_RTL8195A)
   SPIFram(PinName cs = CS);

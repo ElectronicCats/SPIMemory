@@ -42,7 +42,7 @@
    #define BEGIN_SPI SPI.begin();
 
  // Defines and variables specific to SAMD architecture
- #elif defined (ARDUINO_ARCH_SAMD) || defined(ARCH_STM32)|| defined(ARDUINO_ARCH_ESP32)
+ #elif defined (ARDUINO_ARCH_SAMD) || defined(ARCH_STM32)|| defined(ARDUINO_ARCH_ESP32)|| defined(ARDUINO_ARCH_SAMDLC)
    #define CHIP_SELECT   digitalWrite(csPin, LOW);
    #define CHIP_DESELECT digitalWrite(csPin, HIGH);
    #define xfer(n)   _spi->transfer(n)
@@ -222,7 +222,7 @@
 
 #if defined (ARDUINO_ARCH_ESP8266)
 #define CS 15
-#elif defined (ARDUINO_ARCH_SAMD)
+#elif defined (ARDUINO_ARCH_SAMD) || defined(ARDUINO_ARCH_SAMDLC)
 #define CS 10
 /*********************************************************************************************
 // Declaration of the Default Chip select pin name for RTL8195A
